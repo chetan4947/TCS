@@ -1,0 +1,30 @@
+
+
+# Ques:Write a program to find the LCM of two number.
+#LCM
+
+
+
+package TCS;
+import java.util.Scanner;
+public class LCM 
+{
+	public static void main(String args[])
+	{
+		Scanner sc = new Scanner(System.in);
+		int x =sc.nextInt();
+		int y =sc.nextInt();
+		int prod = x*y;
+		int hcf = gcd(x, y);
+		int LCM = prod/hcf; //Product of two number = HCF*LCM;
+		System.out.println("LCM: " +LCM);
+	}
+	public static int gcd(int x, int y)
+	{
+		if(x==0)
+		{
+			return y;
+		}
+		return gcd(y%x, x);
+	}
+}
